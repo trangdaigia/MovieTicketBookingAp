@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "283138594063",
+    "project_id": "dev-index-420611",
+    "storage_bucket": "dev-index-420611.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283138594063:android:46d6db779c241745e65a7a",
+        "android_client_info": {
+          "package_name": "com.example.bookingapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBECSaL7uz4lRkqtev0U98X6awCoEDTtDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283138594063:android:1047a2659f1f7d67e65a7a",
+        "android_client_info": {
+          "package_name": "com.example.movieticketbookingap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBECSaL7uz4lRkqtev0U98X6awCoEDTtDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
