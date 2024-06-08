@@ -15,6 +15,9 @@
         android:theme="@style/Theme.MovieTicketBookingAp"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.NewPassword"
             android:exported="false" />
         <activity
@@ -25,7 +28,9 @@
             android:exported="false" />
         <activity
             android:name=".Activities.MainActivity"
-            android:exported="false" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".Activities.LoginActivity"
             android:exported="false" />
@@ -37,6 +42,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

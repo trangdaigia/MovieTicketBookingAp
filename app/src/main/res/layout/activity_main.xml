@@ -7,6 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main_color"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context=".Activities.MainActivity">
 
   <ScrollView
@@ -96,7 +98,7 @@
           android:layout_height="wrap_content"
           android:layout_marginStart="16dp"
           android:layout_marginTop="24dp"
-          android:layout_marginBottom="12dp"
+          android:layout_marginBottom="4dp"
           android:text="Thể Loại"
           android:textColor="@color/yellow"
           android:textSize="18sp"
@@ -136,7 +138,7 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginStart="16dp"
-          android:layout_marginTop="24dp"
+          android:layout_marginTop="12dp"
           android:layout_marginBottom="12dp"
           android:text="Sắp Chiếu"
           android:textColor="@color/yellow"
@@ -150,11 +152,11 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/view3"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:clipToPadding="false"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
             android:paddingBottom="70dp"
-            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -204,7 +206,7 @@
               android:layout_gravity="center"
               android:layout_margin="5dp"
               app:tint="@color/white"
-              tools:srcCompat="@drawable/btn_1" />
+              android:src="@drawable/btn_1" />
 
           <TextView
               android:id="@+id/textView9"
@@ -228,7 +230,7 @@
               android:layout_gravity="center"
               android:layout_margin="5dp"
               app:tint="@color/white"
-              tools:srcCompat="@drawable/btn_2" />
+              android:src="@drawable/btn_2" />
 
           <TextView
               android:id="@+id/textYeuThich"
@@ -252,7 +254,7 @@
               android:layout_gravity="center"
               android:layout_margin="5dp"
               app:tint="@color/white"
-              tools:srcCompat="@drawable/btn_3" />
+              android:src="@drawable/btn_3" />
 
           <TextView
               android:id="@+id/textGioHang"
@@ -276,7 +278,7 @@
               android:layout_gravity="center"
               android:layout_margin="5dp"
               app:tint="@color/white"
-              tools:srcCompat="@drawable/btn_4" />
+              android:src="@drawable/btn_4" />
 
           <TextView
               android:id="@+id/texTaiKhoan"
