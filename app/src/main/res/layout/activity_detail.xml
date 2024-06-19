@@ -163,7 +163,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Actors"
+                android:text="Diễn Viên"
                 android:textColor="@color/yellow"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@+id/textView11"
