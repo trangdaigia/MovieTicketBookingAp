@@ -29,21 +29,7 @@
                 android:layout_marginTop="128dp"
                 android:layout_marginStart="32dp"
                 android:textStyle="bold"/>
-            <EditText
-                android:id="@+id/fullname"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="Họ tên"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textAlignment="center"
-                android:ems="10"
-                android:background="@drawable/edittext_background"
-                android:layout_marginTop="80dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
-                android:inputType="text"
-                />
+
             <EditText
                 android:id="@+id/Email"
                 android:layout_width="match_parent"
@@ -54,41 +40,13 @@
                 android:textAlignment="center"
                 android:ems="10"
                 android:background="@drawable/edittext_background"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="128dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
                 android:inputType="text"
                 />
-            <EditText
-                android:id="@+id/Phone"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="Số điện thoại"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textAlignment="center"
-                android:ems="10"
-                android:background="@drawable/edittext_background"
-                android:layout_marginTop="32dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
-                android:inputType="text"
-                />
-            <EditText
-                android:id="@+id/username"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="Tài Khoản"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textAlignment="center"
-                android:ems="10"
-                android:background="@drawable/edittext_background"
-                android:layout_marginTop="32dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
-                android:inputType="text"
-                />
+
+
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
