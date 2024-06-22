@@ -43,7 +43,9 @@ public class SignupActivity extends AppCompatActivity {
                 String repass = repassword.getText().toString();
                 if (email.equals("")||password.equals("")||repassword.equals("")){
                     Toast.makeText(SignupActivity.this,"Hãy điền đầy đủ thông tin ", Toast.LENGTH_SHORT).show();
-                } else {
+                } else {if(password.length()<6){
+                    Toast.makeText(SignupActivity.this, "Mật khẩu phải có ít nhất 6 kí tự", Toast.LENGTH_SHORT).show();
+                }else {
                     if(password.equals(repass)){
                         mAuth.createUserWithEmailAndPassword(email, password)
                                 .addOnCompleteListener(SignupActivity.this,new OnCompleteListener<AuthResult>() {
@@ -51,19 +53,21 @@ public class SignupActivity extends AppCompatActivity {
                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                         if (task.isSuccessful()) {
                                             // Sign in success, update UI with the signed-in user's information
-                                            Toast.makeText(SignupActivity.this, "Dang Ky Thanh Cong.",
+                                            Toast.makeText(SignupActivity.this, "Đăng Ký Thành Công.",
                                                     Toast.LENGTH_SHORT).show();
                                             startActivity(new Intent(SignupActivity.this,LoginActivity.class));
                                         } else {
                                             // If sign in fails, display a message to the user.
-                                            Toast.makeText(SignupActivity.this, "Dang Ky That Bai.",
+                                            Toast.makeText(SignupActivity.this, "Đăng Ký Thất Bại.",
                                                     Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                 });
+                    }else {
+                        Toast.makeText(SignupActivity.this, "Mật Khẩu Không Trùng Khớp", Toast.LENGTH_SHORT).show();
                     }
                 }
-            }
+            }}
         });
     }
 }

@@ -56,13 +56,13 @@ public class LoginActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         // Sign in success, update UI with the signed-in user's information
-                                        Toast.makeText(LoginActivity.this, "Dang Nhap Thanh Cong.",
+                                        Toast.makeText(LoginActivity.this, "Đăng Nhập Thành Công.",
                                                 Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(LoginActivity.this,MainActivity.class));
                                     } else {
                                         // If sign in fails, display a message to the user.
 
-                                        Toast.makeText(LoginActivity.this, "Dang Nhap That Bai.",
+                                        Toast.makeText(LoginActivity.this, "Đăng Nhập Thất Bại.",
                                                 Toast.LENGTH_SHORT).show();
 
                                     }

@@ -9,6 +9,9 @@
     <color name="main_color2">#252B45</color>
     <color name="dark_blue2">#414863</color>
     <color name="red">#D74342</color>
-
-
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="seat_unselected">#D3D3D3</color>
+    <color name="seat_selected">#32CD32</color>
 </resources>

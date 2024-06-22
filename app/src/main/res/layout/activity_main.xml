@@ -20,20 +20,34 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
-      <EditText
-          android:id="@+id/editTextText"
+      <LinearLayout
           android:layout_width="match_parent"
-          android:layout_height="50dp"
-          android:background="@drawable/edittext_background"
-          android:ems="10"
-          android:inputType="text"
-          android:drawableStart="@drawable/search"
-          android:layout_margin="16dp"
-          android:drawablePadding="8dp"
-          android:padding="12dp"
-          android:drawableEnd="@drawable/microphone"
-          android:hint="Tìm kiếm"
-          android:textColorHint="@color/white"/>
+          android:layout_height="match_parent"
+          android:orientation="horizontal"
+          android:paddingTop="20dp">
+
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/edittext_background"
+            android:drawableStart="@drawable/search"
+            android:drawablePadding="8dp"
+            android:ems="10"
+            android:hint="Tìm kiếm"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColorHint="@color/white" />
+        <ImageView
+            android:background="@color/main_color"
+            android:id="@+id/logoutbtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            app:tint="@color/white"
+            android:src="@drawable/baseline_logout_24" />
+      </LinearLayout>
 
       <androidx.constraintlayout.widget.ConstraintLayout
           android:layout_width="match_parent"

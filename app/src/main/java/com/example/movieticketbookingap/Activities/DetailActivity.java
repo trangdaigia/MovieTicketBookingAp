@@ -1,7 +1,9 @@
 package com.example.movieticketbookingap.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -39,6 +41,7 @@ public class DetailActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapterActorList,adapterCategory;
     private RecyclerView recyclerViewActors,recyclerViewCategory;
     private NestedScrollView scrollView;
+    private Button BookTicket;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +50,13 @@ public class DetailActivity extends AppCompatActivity {
         idFilm = getIntent().getIntExtra("id",0);
         initView();
         sendRequest();
+        BookTicket = findViewById(R.id.BookBtn);
+        BookTicket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DetailActivity.this,SeatBookActivity.class));
+            }
+        });
     }
 
     private void sendRequest() {

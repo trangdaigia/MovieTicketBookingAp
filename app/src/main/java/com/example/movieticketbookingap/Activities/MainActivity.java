@@ -1,11 +1,14 @@
 package com.example.movieticketbookingap.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
@@ -27,6 +30,7 @@ import com.example.movieticketbookingap.Domain.GenresItem;
 import com.example.movieticketbookingap.Domain.ListFilm;
 import com.example.movieticketbookingap.Domain.SliderItems;
 import com.example.movieticketbookingap.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -41,10 +45,19 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar loading1,loading2,loading3;
     private ViewPager2 viewPager2;
     private Handler sliderHandler = new Handler();
+    private ImageView logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        logout = findViewById(R.id.logoutbtn);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(MainActivity.this,LoginActivity.class));
+            }
+        });
 
         initView();
         banners();
@@ -54,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         Window w=getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+
     }
 
     private void sendRequestBestMovies(){
