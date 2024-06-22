@@ -21,7 +21,6 @@ import com.google.firebase.auth.FirebaseAuth;
 public class SignupActivity extends AppCompatActivity {
     EditText fullname,Email,Phone,username,Password,repassword;
     Button sigupBtn;
-    dbConnect DB;
     private FirebaseAuth mAuth;
 
     @Override
@@ -39,7 +38,6 @@ public class SignupActivity extends AppCompatActivity {
         sigupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dbConnect DB = new dbConnect(SignupActivity.this);
                 String email = Email.getText().toString();
                 String password = Password.getText().toString();
                 String repass = repassword.getText().toString();
