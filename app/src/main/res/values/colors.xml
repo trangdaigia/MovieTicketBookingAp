@@ -13,5 +13,20 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="seat_unselected">#D3D3D3</color>
-    <color name="seat_selected">#32CD32</color>
+    <color name="dark_grey">#A9A9A9</color>
+    <color name="seat_taken">#444444</color>
+    <color name="seat_standard">#800080</color>
+    <color name="seat_vip">#FF0000</color>
+    <color name="seat_double">#FF00FF</color>
+    <color name="seat_center">#00FF00</color>
+    <color name="seat_available">#FFFFFF</color>
+    <color name="seat_sold">#CCCCCC</color>
+    <color name="seat_selected">#FFA500</color>
+        <color name="seat_double_available">#0000FF</color>
+        <color name="seat_double_selected">#0000A0</color>
+        <color name="seat_vip_available">#FFD700</color>
+        <color name="seat_vip_selected">#FFBF00</color>
+
+
+
 </resources>

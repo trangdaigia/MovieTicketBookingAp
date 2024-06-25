@@ -19,7 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SignupActivity extends AppCompatActivity {
-    EditText fullname,Email,Phone,username,Password,repassword;
+    EditText Email,Password,repassword;
     Button sigupBtn;
     private FirebaseAuth mAuth;
 

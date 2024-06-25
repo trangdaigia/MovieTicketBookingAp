@@ -1,10 +1,7 @@
 package com.example.movieticketbookingap.Adapters;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
-import android.view.PixelCopy;
-import android.view.RoundedCorner;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -20,54 +17,12 @@ import com.bumptech.glide.request.RequestOptions;
 import com.example.movieticketbookingap.Domain.SliderItems;
 import com.example.movieticketbookingap.R;
 
-import java.util.List;
+import java.util.ArrayList;
 
-public class SliderAdapters extends RecyclerView.Adapter<SliderAdapters.SliderViewHolder> {
-    private List<SliderItems> sliderItems;
+public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.SliderViewholder> {
+    private ArrayList<SliderItems> sliderItems;
     private ViewPager2 viewPager2;
     private Context context;
-
-    public SliderAdapters(List<SliderItems> sliderItems, ViewPager2 viewPager2) {
-        this.sliderItems = sliderItems;
-        this.viewPager2 = viewPager2;
-    }
-
-    @NonNull
-    @Override
-    public SliderAdapters.SliderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        context=parent.getContext();
-        return new SliderViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.slide_item_container,parent,false));
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull SliderAdapters.SliderViewHolder holder, int position) {
-holder.setImage(sliderItems.get(position));
-if (position==sliderItems.size()-2){
-    viewPager2.post(runnable);
-}
-    }
-
-    @Override
-    public int getItemCount() {
-        return sliderItems.size();
-    }
-
-    public class SliderViewHolder extends RecyclerView.ViewHolder{
-        private ImageView imageView;
-        public SliderViewHolder(@NonNull View itemView) {
-            super(itemView);
-            imageView=itemView.findViewById(R.id.imageSlide);
-        }
-        void setImage(SliderItems sliderItems){
-            RequestOptions requestOptions = new RequestOptions();
-            requestOptions=requestOptions.transforms(new CenterCrop(),new RoundedCorners(60));
-
-            Glide.with(context)
-                    .load(sliderItems.getImage())
-                    .apply(requestOptions)
-                    .into(imageView);
-        }
-    }
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
@@ -75,4 +30,45 @@ if (position==sliderItems.size()-2){
             notifyDataSetChanged();
         }
     };
+
+    public SliderAdapter(ArrayList<SliderItems> sliderItems, ViewPager2 viewPager2) {
+        this.sliderItems = sliderItems;
+        this.viewPager2 = viewPager2;
+    }
+
+    @NonNull
+    @Override
+    public SliderAdapter.SliderViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        context=parent.getContext();
+        return new SliderViewholder(LayoutInflater.from(context).inflate(R.layout.slide_item_container,parent,false));
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull SliderAdapter.SliderViewholder holder, int position) {
+    holder.setImage(sliderItems.get(position));
+    if(position==sliderItems.size()-2){
+        viewPager2.post(runnable);
+    }
+    }
+
+    @Override
+    public int getItemCount() {
+        return sliderItems.size();
+    }
+
+    public class SliderViewholder extends RecyclerView.ViewHolder{
+        private ImageView imageView;
+        public SliderViewholder(@NonNull View itemView) {
+            super(itemView);
+            imageView=itemView.findViewById(R.id.imageSlide);
+        }
+        void setImage(SliderItems sliderItems){
+            RequestOptions requestOptions = new RequestOptions();
+            requestOptions=requestOptions.transforms(new CenterCrop(),new RoundedCorners(60));
+            Glide.with(context)
+                    .load(sliderItems.getUrl())
+                    .apply(requestOptions)
+                    .into(imageView);
+        }
+    }
 }

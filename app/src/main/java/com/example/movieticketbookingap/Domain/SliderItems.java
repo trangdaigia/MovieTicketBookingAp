@@ -1,17 +1,16 @@
 package com.example.movieticketbookingap.Domain;
 
 public class SliderItems {
-    private int image;
+    private String url;
 
-    public SliderItems(int image) {
-        this.image = image;
+    public SliderItems() {
     }
 
-    public int getImage() {
-        return image;
+    public String getUrl() {
+        return url;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

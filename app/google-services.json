@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "226026597921",
-    "project_id": "movieapp-baf51",
-    "storage_bucket": "movieapp-baf51.appspot.com"
+    "project_number": "825574715245",
+    "firebase_url": "https://appmv-90552-default-rtdb.firebaseio.com",
+    "project_id": "appmv-90552",
+    "storage_bucket": "appmv-90552.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:226026597921:android:41a71c9f14a15939efbd60",
+        "mobilesdk_app_id": "1:825574715245:android:c5423af5fe0c4d7bdd3464",
         "android_client_info": {
           "package_name": "com.example.movieticketbookingap"
         }
@@ -15,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCUVNk1Svz6KNYgYKKf7NMj06wPPIveDZ8"
+          "current_key": "AIzaSyAC-LAFbDCcVwlYdPMrw-0B-drjtiY0_Mk"
         }
       ],
       "services": {

@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FF69B4" /> <!-- Hot pink color for sweetbox seat -->
+    <stroke android:width="2dp" android:color="#000000" /> <!-- Black border -->
+</shape>
