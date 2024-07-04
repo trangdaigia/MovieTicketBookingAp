@@ -45,7 +45,7 @@ public class NowPlayAdapter extends RecyclerView.Adapter<NowPlayAdapter.ViewHold
                 .into(holder.pic);
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, DetailActivity.class);
-            intent.putExtra("object",items.get(position));
+            intent.putExtra("movie",items.get(position));
             context.startActivity(intent);
         });
 

@@ -14,7 +14,7 @@ import com.example.movieticketbookingap.databinding.ActivityDetailBinding;
 
 public class DetailActivity extends BaseActivity {
     ActivityDetailBinding binding;
-    private Movie object;
+    private Movie movie;
     Button seatbook;
 
 
@@ -30,6 +30,7 @@ public class DetailActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DetailActivity.this, SeatActivity.class);
+                intent.putExtra("movie", movie);
                 startActivity(intent);
             }
         });
@@ -41,19 +42,19 @@ public class DetailActivity extends BaseActivity {
             finish();});
             //startActivity(new Intent(DetailActivity.this, MainActivity.class));
             Glide.with(DetailActivity.this)
-                    .load(object.getImage())
+                    .load(movie.getImage())
                     .into(binding.picDetail);
-            binding.premiere.setText(object.getPremiere());
-            binding.movieTime.setText(object.getTime());
-            binding.name.setText(object.getName());
-            binding.genres.setText(object.getGenre());
-            binding.description.setText(object.getDescription());
-            binding.director.setText(object.getDirector());
-            binding.actor.setText(object.getActors());
+            binding.premiere.setText(movie.getPremiere());
+            binding.movieTime.setText(movie.getTime());
+            binding.name.setText(movie.getName());
+            binding.genres.setText(movie.getGenre());
+            binding.description.setText(movie.getDescription());
+            binding.director.setText(movie.getDirector());
+            binding.actor.setText(movie.getActors());
         }
 
     private void getIntentExtra() {
-        object = (Movie) getIntent().getSerializableExtra("object");
+        movie = (Movie) getIntent().getSerializableExtra("movie");
     }
 
 

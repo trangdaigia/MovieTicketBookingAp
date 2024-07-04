@@ -48,7 +48,7 @@ public class UpComingAdapter extends RecyclerView.Adapter<UpComingAdapter.ViewHo
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, DetailActivity.class);
-                intent.putExtra("object",items.get(position));
+                intent.putExtra("movie",items.get(position));
                 context.startActivity(intent);
             }
         });
