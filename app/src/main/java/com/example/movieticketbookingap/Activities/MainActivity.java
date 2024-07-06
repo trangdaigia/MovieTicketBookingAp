@@ -3,8 +3,11 @@ package com.example.movieticketbookingap.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
+import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,6 +38,7 @@ public class MainActivity extends BaseActivity {
     private ImageView logout;
     private ActivityMainBinding binding;
     private FirebaseDatabase database;
+    Button giohang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +61,19 @@ public class MainActivity extends BaseActivity {
         initCategory();
         initNowPlay();
         initUpComing();
+        Anhxa();
 
+    }
+
+    private void Anhxa() {
+        LinearLayout giohang = findViewById(R.id.giohang);
+        giohang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent giohang = new Intent(getApplicationContext(), GioHangActivity.class);
+                startActivity(giohang);
+            }
+        });
     }
 
     private void initUpComing() {
