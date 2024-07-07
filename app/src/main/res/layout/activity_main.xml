@@ -219,6 +219,7 @@
           android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/home"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
@@ -231,13 +232,13 @@
               android:layout_gravity="center"
               android:layout_margin="5dp"
               app:tint="@color/white"
-              android:src="@drawable/btn_1" />
+              android:src="@drawable/homeicon" />
 
           <TextView
               android:id="@+id/textView9"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:text="Khám Phá"
+              android:text="Trang Chủ"
               android:textAlignment="center"
               android:textColor="@color/white" />
         </LinearLayout>
@@ -255,13 +256,13 @@
               android:layout_gravity="center"
               android:layout_margin="5dp"
               app:tint="@color/white"
-              android:src="@drawable/btn_2" />
+              android:src="@drawable/popcorn" />
 
           <TextView
               android:id="@+id/textYeuThich"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:text="Yêu Thích"
+              android:text="Bắp Nước"
               android:textAlignment="center"
               android:textColor="@color/white" />
         </LinearLayout>
