@@ -1,53 +1,43 @@
 package com.example.movieticketbookingap.Domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
-public class GioHang implements Serializable {
-    private String tenSanPham;
-    private double gia;
-    private int soLuong;
+public class GioHang {
+    private String movieName;
+    private int totalAmount;
+    private ArrayList<String> selectedSeats;
 
-    public String getPic() {
-        return pic;
+    // Constructors, getters, and setters
+    public GioHang() {}
+
+    public GioHang(String movieName, int totalAmount, ArrayList<String> selectedSeats) {
+        this.movieName = movieName;
+        this.totalAmount = totalAmount;
+        this.selectedSeats = selectedSeats;
     }
 
-    public void setPic(String pic) {
-        this.pic = pic;
+    public String getMovieName() {
+        return movieName;
     }
 
-    private String pic;
-
-    public GioHang() {
-
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
     }
 
-    public GioHang(String tenSanPham, double gia, int soLuong) {
-        this.tenSanPham = tenSanPham;
-        this.gia = gia;
-        this.soLuong = soLuong;
+    public int getTotalAmount() {
+        return totalAmount;
     }
 
-    public String getTenSanPham() {
-        return tenSanPham;
+    public void setTotalAmount(int totalAmount) {
+        this.totalAmount = totalAmount;
     }
 
-    public void setTenSanPham(String tenSanPham) {
-        this.tenSanPham = tenSanPham;
+    public ArrayList<String> getSelectedSeats() {
+        return selectedSeats;
     }
 
-    public double getGia() {
-        return gia;
-    }
-
-    public void setGia(double gia) {
-        this.gia = gia;
-    }
-
-    public int getSoLuong() {
-        return soLuong;
-    }
-
-    public void setSoLuong(int soLuong) {
-        this.soLuong = soLuong;
+    public void setSelectedSeats(ArrayList<String> selectedSeats) {
+        this.selectedSeats = selectedSeats;
     }
 }
