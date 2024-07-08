@@ -47,6 +47,7 @@ public class MainActivity extends BaseActivity {
         database = FirebaseDatabase.getInstance();
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         giohang = findViewById(R.id.giohang);
         giohang.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +55,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(MainActivity.this, GioHangActivity.class));
             }
         });
+
         home = findViewById(R.id.home);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
