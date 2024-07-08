@@ -18,6 +18,12 @@
             android:name=".Activities.GioHangActivity"
             android:exported="false" />
         <activity
+            android:name=".Activities.editprofile"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.UserProfile"
+            android:exported="false" />
+        <activity
             android:name=".Activities.SeatActivity"
             android:exported="false" />
 
