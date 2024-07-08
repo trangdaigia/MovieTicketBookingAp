@@ -38,7 +38,7 @@ public class MainActivity extends BaseActivity {
     private ImageView logout;
     private ActivityMainBinding binding;
     private FirebaseDatabase database;
-    private LinearLayout home,giohang;
+    private LinearLayout home,giohang,vi,popcorn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,21 @@ public class MainActivity extends BaseActivity {
         database = FirebaseDatabase.getInstance();
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        vi =findViewById(R.id.vi);
+        vi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, editprofile.class));
+            }
+        });
+
+        popcorn = findViewById(R.id.popcorn);
+        popcorn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, PopcornDrinksActivity.class));
+            }
+        });
         giohang = findViewById(R.id.giohang);
         giohang.setOnClickListener(new View.OnClickListener() {
             @Override

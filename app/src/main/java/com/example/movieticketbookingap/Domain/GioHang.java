@@ -3,7 +3,7 @@ package com.example.movieticketbookingap.Domain;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class GioHang {
+public class GioHang implements Serializable {
     private String movieName;
     private int totalAmount;
     private ArrayList<Seat> selectedSeats;

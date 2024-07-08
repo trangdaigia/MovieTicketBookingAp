@@ -16,7 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.movieticketbookingap.Adapters.GioHangAdapter;
+import com.example.movieticketbookingap.Adapters.UpComingAdapter;
 import com.example.movieticketbookingap.Domain.GioHang;
+import com.example.movieticketbookingap.Domain.Movie;
 import com.example.movieticketbookingap.R;
 import com.example.movieticketbookingap.databinding.ActivityGiohangBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -40,6 +42,7 @@ public class GioHangActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private LinearLayout layout1;
     private Button btnmuahang;
+    private FirebaseDatabase database;
 
 
     @Override
@@ -56,7 +59,33 @@ public class GioHangActivity extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("GioHang");
 
         anhxa();
-        initGioHang();
+        //initGioHang();
+       initThongTin();
+    }
+
+    private void initThongTin() {
+        DatabaseReference myRef =database.getReference("GioHang");
+
+        ArrayList<GioHang> list = new ArrayList<>();
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    for (DataSnapshot issue: snapshot.getChildren()){
+                        list.add(issue.getValue(GioHang.class));
+                    }
+                    binding.recycleviewgiohang.setLayoutManager(new LinearLayoutManager(GioHangActivity.this,LinearLayoutManager.HORIZONTAL,false));
+                    RecyclerView.Adapter adapter =new GioHangAdapter(list);
+                    binding.recycleviewgiohang.setAdapter(adapter);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void anhxa() {
@@ -89,7 +118,7 @@ public class GioHangActivity extends AppCompatActivity {
                     binding.txtgiohangtrong.setVisibility(View.GONE);
                     binding.recycleviewgiohang.setVisibility(View.VISIBLE);
 
-                    GioHangAdapter adapter = new GioHangAdapter(GioHangActivity.this, list);
+                    GioHangAdapter adapter = new GioHangAdapter(list);
                     binding.recycleviewgiohang.setAdapter(adapter);
                     binding.recycleviewgiohang.setLayoutManager(new LinearLayoutManager(GioHangActivity.this));
                 }
