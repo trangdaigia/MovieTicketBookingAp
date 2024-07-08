@@ -1,3 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MovieTicketBookingAp</string>
+    <string name="select_popcorn_type">Chọn loại bắp</string>
+    <string name="regular_popcorn">Bắp thường</string>
+    <string name="cheese_popcorn">Bắp phô mai</string>
+    <string name="caramel_popcorn">Bắp caramel</string>
+    <string name="order">Đặt hàng</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="description_popcorn_image">Hình ảnh bắp rang bơ</string>
+    <string name="select_drink_type">Chọn loại nước uống</string>
+    <string name="coca_cola">Coca Cola</string>
+    <string name="fanta_orange">Fanta Cam</string>
+    <string name="sprite">Sprite</string>
+    <string name="minus_original_popcorn">Giảm bắp thường</string>
+    <string name="plus_original_popcorn">Tăng bắp thường</string>
+    <string name="minus_cheese_popcorn">Giảm bắp phô mai</string>
+    <string name="plus_cheese_popcorn">Tăng bắp phô mai</string>
+    <string name="minus_caramel_popcorn">Giảm bắp caramel</string>
+    <string name="plus_caramel_popcorn">Tăng bắp caramel</string>
+    <string name="minus_coca_cola">Giảm Coca Cola</string>
+    <string name="plus_coca_cola">Tăng Coca Cola</string>
+    <string name="minus_fanta">Giảm Fanta</string>
+    <string name="plus_fanta">Tăng Fanta</string>
+    <string name="minus_sprite">Giảm Sprite</string>
+    <string name="plus_sprite">Tăng Sprite</string>
+    <string name="regular_popcorn_image">Hình ảnh bắp thường</string>
+    <string name="cheese_popcorn_image">Hình ảnh bắp phô mai</string>
+    <string name="caramel_popcorn_image">Hình ảnh bắp caramel</string>
+    <string name="coca_cola_image">Hình ảnh Coca Cola</string>
+    <string name="fanta_orange_image">Hình ảnh Fanta Cam</string>
+    <string name="sprite_image">Hình ảnh Sprite</string>
+    <string name="zero">0</string>
 </resources>

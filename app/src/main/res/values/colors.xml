@@ -28,5 +28,10 @@
         <color name="seat_vip_selected">#FFBF00</color>
 
 
+    <color name="text_color_high_contrast">#FFFFFF</color>
+    <color name="background_color_dark">#000000</color>
+
+
+
 
 </resources>
