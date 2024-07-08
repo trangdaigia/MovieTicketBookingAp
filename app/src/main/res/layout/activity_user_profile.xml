@@ -12,11 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/backbut"
+            android:background="@color/main_color"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:padding="14dp"
-            android:src="@drawable/back_btn"/>
+            android:src="@drawable/back_btn" />
 
         <TextView
             android:layout_width="wrap_content"
