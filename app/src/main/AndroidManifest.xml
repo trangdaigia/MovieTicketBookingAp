@@ -20,21 +20,14 @@
         <activity
             android:name=".Activities.SeatActivity"
             android:exported="false" />
-        <activity
-            android:name=".Activities.TicketActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.SeatBookActivity"
-            android:exported="false" />
+
         <activity
             android:name=".Activities.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".Activities.NewPassword"
+            android:name=".Activities.PopcornDrinksActivity"
             android:exported="false" />
-        <activity
-            android:name=".Activities.ResetPassword"
-            android:exported="false" />
+
         <activity
             android:name=".Activities.SignupActivity"
             android:exported="false" />
