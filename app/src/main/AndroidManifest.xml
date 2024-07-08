@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieTicketBookingAp"
-        tools:targetApi="34">
+        tools:targetApi="31">
         <activity
             android:name=".Activities.SeatActivity"
             android:exported="false" />
@@ -22,9 +22,6 @@
             android:exported="false" />
         <activity
             android:name=".Activities.SeatBookActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.PopcornDrinksActivity"
             android:exported="false" />
         <activity
             android:name=".Activities.DetailActivity"
@@ -47,7 +44,6 @@
         <activity
             android:name=".Activities.IntroActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

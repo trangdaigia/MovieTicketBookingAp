@@ -38,7 +38,7 @@ public class MainActivity extends BaseActivity {
     private ImageView logout;
     private ActivityMainBinding binding;
     private FirebaseDatabase database;
-    Button giohang;
+    private LinearLayout home,giohang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,20 @@ public class MainActivity extends BaseActivity {
         database = FirebaseDatabase.getInstance();
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        giohang = findViewById(R.id.giohang);
+        giohang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, GioHangActivity.class));
+            }
+        });
+        home = findViewById(R.id.home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
 
         logout = findViewById(R.id.logoutbtn);
         logout.setOnClickListener(new View.OnClickListener() {
@@ -61,20 +75,11 @@ public class MainActivity extends BaseActivity {
         initCategory();
         initNowPlay();
         initUpComing();
-        Anhxa();
+
 
     }
 
-    private void Anhxa() {
-        LinearLayout giohang = findViewById(R.id.giohang);
-        giohang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent giohang = new Intent(getApplicationContext(), GioHangActivity.class);
-                startActivity(giohang);
-            }
-        });
-    }
+
 
     private void initUpComing() {
         DatabaseReference myRef =database.getReference("UpComing");
