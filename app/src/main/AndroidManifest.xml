@@ -15,6 +15,9 @@
         android:theme="@style/Theme.MovieTicketBookingAp"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.GioHangActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.SeatActivity"
             android:exported="false" />
         <activity

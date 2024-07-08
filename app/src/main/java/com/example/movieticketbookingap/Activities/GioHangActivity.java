@@ -72,10 +72,13 @@ public class GioHangActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ArrayList<GioHang> list = new ArrayList<>();
+                int totalAmount = 0;
+
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     GioHang gioHang = snapshot.getValue(GioHang.class);
                     if (gioHang != null) {
                         list.add(gioHang);
+                        totalAmount += gioHang.getTotalAmount();
                     }
                 }
 
@@ -90,6 +93,8 @@ public class GioHangActivity extends AppCompatActivity {
                     binding.recycleviewgiohang.setAdapter(adapter);
                     binding.recycleviewgiohang.setLayoutManager(new LinearLayoutManager(GioHangActivity.this));
                 }
+
+                binding.txttongtien.setText(totalAmount + "Đ");
             }
 
             @Override

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.movieticketbookingap.Activities.DetailActivity;
 import com.example.movieticketbookingap.Domain.GioHang;
+import com.example.movieticketbookingap.Domain.Seat;
 import com.example.movieticketbookingap.R;
 
 import java.util.ArrayList;
@@ -40,7 +41,12 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.GioHangV
         GioHang gioHang = gioHangList.get(position);
         holder.movieNameTxt.setText(gioHang.getMovieName());
         holder.totalAmountTxt.setText(gioHang.getTotalAmount() + "đ");
-        holder.selectedSeatsTxt.setText(gioHang.getSelectedSeats().toString());
+
+        StringBuilder seats = new StringBuilder();
+        for (Seat seat : gioHang.getSelectedSeats()) {
+            seats.append(seat.getSeatNumber()).append(" ");
+        }
+        holder.selectedSeatsTxt.setText(seats.toString().trim());
     }
 
     @Override
