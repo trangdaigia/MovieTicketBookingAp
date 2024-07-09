@@ -38,9 +38,10 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.GioHangV
         GioHang gioHang = gioHangList.get(position);
         holder.itemGioHangTenSP.setText(gioHang.getMovieName());
         holder.itemGioHangGia.setText(String.valueOf(gioHang.getTotalAmount()));
-        holder.itemGioHangSoLuong.setText(String.valueOf(gioHang.getSelectedSeats().size()));
-        holder.itemGioHangBapNuoc.setText("Bắp nước: " + gioHang.getBapNuoc());
-        holder.itemGioHangSoLuong.setText("Số lượng: " + gioHang.getSoLuong());
+        holder.itemGioHangSoLuongBap.setText(String.valueOf(gioHang.getPopcornCount()));
+        holder.itemGioHangSoLuongNuoc.setText(String.valueOf(gioHang.getDrinkCount()));
+
+
 
         // Set image (if you have an image to set)
         // holder.itemGioHangImage.setImageResource(...); // Set your image resource here
@@ -53,15 +54,15 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.GioHangV
 
     public static class GioHangViewHolder extends RecyclerView.ViewHolder {
         ImageView itemGioHangImage;
-        TextView itemGioHangTenSP, itemGioHangGia, itemGioHangSoLuong, itemGioHangBapNuoc;
+        TextView itemGioHangTenSP, itemGioHangGia, itemGioHangSoLuongBap,itemGioHangSoLuongNuoc,itemGioHangVitri;
 
         public GioHangViewHolder(@NonNull View itemView) {
             super(itemView);
             itemGioHangImage = itemView.findViewById(R.id.item_giohang_image);
             itemGioHangTenSP = itemView.findViewById(R.id.item_giohang_tensp);
             itemGioHangGia = itemView.findViewById(R.id.item_giohang_gia);
-            itemGioHangSoLuong = itemView.findViewById(R.id.item_giohang_soluong2);
-            itemGioHangBapNuoc = itemView.findViewById(R.id.item_giohang_bapnuoc);
+            itemGioHangSoLuongBap=itemView.findViewById(R.id.item_giohang_soluongbap);
+            itemGioHangSoLuongNuoc=itemView.findViewById(R.id.item_giohang_soluongnuoc);
         }
     }
 }

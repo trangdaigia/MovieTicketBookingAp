@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +25,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import java.util.Map;
 
 public class SeatActivity extends AppCompatActivity {
@@ -35,6 +35,11 @@ public class SeatActivity extends AppCompatActivity {
     private Movie movie;
     private Button addBtn;
     private FirebaseFirestore db;
+
+    private int popcornCount = 0;
+    private int drinkCount = 0;
+    private TextView txtOriginalCountValue;
+    private TextView txtCocaColaCountValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +54,8 @@ public class SeatActivity extends AppCompatActivity {
         }
 
         totalTxt = findViewById(R.id.totalTxt);
-
+        txtOriginalCountValue = findViewById(R.id.txtOriginalCountValue);
+        txtCocaColaCountValue = findViewById(R.id.txtCocaColaCountValue);
 
         setupSeatClickListener(binding.A1);
         setupSeatClickListener(binding.A2);
@@ -58,6 +64,8 @@ public class SeatActivity extends AppCompatActivity {
         setupSeatClickListener(binding.A5);
         setupSeatClickListener(binding.A6);
         setupSeatClickListener(binding.A7);
+
+        setupPopcornAndDrinkButtons();
 
         addBtn = findViewById(R.id.addBtn);
         binding.addBtn.setOnClickListener(v -> insertDataToFirebase());
@@ -85,6 +93,36 @@ public class SeatActivity extends AppCompatActivity {
         totalTxt.setText(totalAmount + "đ");
     }
 
+    private void setupPopcornAndDrinkButtons() {
+        binding.btnPlusOriginal.setOnClickListener(v -> {
+            popcornCount++;
+            txtOriginalCountValue.setText(String.valueOf(popcornCount));
+            updateTotalAmount(10000);
+        });
+
+        binding.btnMinusOriginal.setOnClickListener(v -> {
+            if (popcornCount > 0) {
+                popcornCount--;
+                txtOriginalCountValue.setText(String.valueOf(popcornCount));
+                updateTotalAmount(-10000);
+            }
+        });
+
+        binding.btnPlusCocaCola.setOnClickListener(v -> {
+            drinkCount++;
+            txtCocaColaCountValue.setText(String.valueOf(drinkCount));
+            updateTotalAmount(10000);
+        });
+
+        binding.btnMinusCocaCola.setOnClickListener(v -> {
+            if (drinkCount > 0) {
+                drinkCount--;
+                txtCocaColaCountValue.setText(String.valueOf(drinkCount));
+                updateTotalAmount(-10000);
+            }
+        });
+    }
+
     private void insertDataToFirebase() {
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("GioHang");
         String userId = "USER_ID";  // Replace with actual user ID or session ID
@@ -93,18 +131,19 @@ public class SeatActivity extends AppCompatActivity {
         gioHang.put("movieName", movie.getName());
         gioHang.put("totalAmount", totalAmount);
         gioHang.put("selectedSeats", selectedSeats);
+        gioHang.put("popcornCount", popcornCount);
+        gioHang.put("drinkCount", drinkCount);
 
         databaseReference.child(userId).setValue(gioHang)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         Log.d("Firebase", "Data added successfully");
                         Toast.makeText(SeatActivity.this, "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(SeatActivity.this,MainActivity.class));
+                        startActivity(new Intent(SeatActivity.this, MainActivity.class));
                     } else {
                         Log.e("Firebase", "Error adding data", task.getException());
                         Toast.makeText(SeatActivity.this, "Lỗi, không thể thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
-
 }
