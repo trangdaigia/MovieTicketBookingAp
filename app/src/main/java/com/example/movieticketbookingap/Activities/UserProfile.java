@@ -95,7 +95,7 @@ public class UserProfile extends AppCompatActivity {
         PurchasedTbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(UserProfile.this, ve_da_mua.class));
+                startActivity(new Intent(UserProfile.this, VeDaMuaActivity.class));
             }
         });
 

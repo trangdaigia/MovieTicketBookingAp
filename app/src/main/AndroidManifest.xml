@@ -15,6 +15,12 @@
         android:theme="@style/Theme.MovieTicketBookingAp"
         tools:targetApi="31">
         <activity
+            android:name=".Activities.ItemTicket"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.VeDaMuaActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.ve_da_mua"
             android:exported="false" />
         <activity

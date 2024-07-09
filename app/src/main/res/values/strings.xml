@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">MovieTicketBookingAp</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Movie Ticket Booking</string>
     <string name="select_popcorn_type">Chọn loại bắp</string>
     <string name="regular_popcorn">Bắp thường</string>
     <string name="cheese_popcorn">Bắp phô mai</string>
@@ -41,4 +41,7 @@
     <string name="back_button_desc">Quay lại</string>
     <string name="special_offers_title">Ưu đãi ngập tràn</string>
     <string name="offer_image_desc">Hình ảnh ưu đãi</string>
+    <string name="ticket_info_format">Phim: %1$s\nGhế: %2$s\nTổng số tiền: %3$d</string>
+    <string name="no_data">Không có dữ liệu</string>
+    <string name="error_format">Lỗi: %1$s</string>
 </resources>

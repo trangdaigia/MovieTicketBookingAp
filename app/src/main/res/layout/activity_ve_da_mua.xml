@@ -4,21 +4,38 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="#F5F5F5">
+    >
 
+    <!-- Header -->
     <TextView
+        android:id="@+id/headerTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thông tin vé đã mua"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
+
+    <!-- Ticket Information -->
+    <TextView
+        android:id="@+id/ticketInfoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đang tải dữ liệu..."
+        android:textSize="18sp"
+        android:padding="8dp"
+        android:background="@drawable/ticket_info_background"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Footer -->
+    <Button
+        android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Danh sách vé đã mua"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:padding="16dp"
-        android:textColor="#333333" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:text="Quay lại"
+        android:layout_gravity="center"
         android:padding="8dp"
-        android:clipToPadding="false" />
+        android:onClick="onBackButtonClicked" />
+
 </LinearLayout>
