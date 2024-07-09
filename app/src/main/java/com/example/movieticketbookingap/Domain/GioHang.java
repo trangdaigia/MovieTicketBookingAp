@@ -7,20 +7,18 @@ public class GioHang implements Serializable {
     private String movieName;
     private int totalAmount;
     private ArrayList<Seat> selectedSeats;
-    private String bapNuoc;
-    private int soLuong;
-    
+    private int popcornCount;
+    private int drinkCount;
 
     public GioHang() {
-        // Default constructor required for calls to DataSnapshot.getValue(GioHang.class)
     }
 
-    public GioHang(String movieName, int totalAmount, ArrayList<Seat> selectedSeats, String bapNuoc, int soLuong) {
+    public GioHang(String movieName, int totalAmount, ArrayList<Seat> selectedSeats, int popcornCount, int drinkCount) {
         this.movieName = movieName;
         this.totalAmount = totalAmount;
         this.selectedSeats = selectedSeats;
-        this.bapNuoc = bapNuoc;
-        this.soLuong = soLuong;
+        this.popcornCount = popcornCount;
+        this.drinkCount = drinkCount;
     }
 
     public String getMovieName() {
@@ -47,19 +45,19 @@ public class GioHang implements Serializable {
         this.selectedSeats = selectedSeats;
     }
 
-    public String getBapNuoc() {
-        return bapNuoc;
+    public int getPopcornCount() {
+        return popcornCount;
     }
 
-    public void setBapNuoc(String bapNuoc) {
-        this.bapNuoc = bapNuoc;
+    public void setPopcornCount(int popcornCount) {
+        this.popcornCount = popcornCount;
     }
 
-    public int getSoLuong() {
-        return soLuong;
+    public int getDrinkCount() {
+        return drinkCount;
     }
 
-    public void setSoLuong(int soLuong) {
-        this.soLuong = soLuong;
+    public void setDrinkCount(int drinkCount) {
+        this.drinkCount = drinkCount;
     }
 }

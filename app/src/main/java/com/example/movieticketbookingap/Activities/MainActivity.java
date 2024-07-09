@@ -54,14 +54,6 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(MainActivity.this, UserProfile.class));
             }
         });
-
-        popcorn = findViewById(R.id.popcorn);
-        popcorn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, PopcornDrinksActivity.class));
-            }
-        });
         giohang = findViewById(R.id.giohang);
         giohang.setOnClickListener(new View.OnClickListener() {
             @Override
