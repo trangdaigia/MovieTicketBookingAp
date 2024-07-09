@@ -9,6 +9,7 @@ public class GioHang implements Serializable {
     private ArrayList<Seat> selectedSeats;
     private String bapNuoc;
     private int soLuong;
+    
 
     public GioHang() {
         // Default constructor required for calls to DataSnapshot.getValue(GioHang.class)

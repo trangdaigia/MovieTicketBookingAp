@@ -1,5 +1,6 @@
 package com.example.movieticketbookingap.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -49,6 +50,7 @@ public class SeatActivity extends AppCompatActivity {
 
         totalTxt = findViewById(R.id.totalTxt);
 
+
         setupSeatClickListener(binding.A1);
         setupSeatClickListener(binding.A2);
         setupSeatClickListener(binding.A3);
@@ -58,12 +60,7 @@ public class SeatActivity extends AppCompatActivity {
         setupSeatClickListener(binding.A7);
 
         addBtn = findViewById(R.id.addBtn);
-        binding.addBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                insertDataToFirebase();
-            }
-        });
+        binding.addBtn.setOnClickListener(v -> insertDataToFirebase());
     }
 
     private void setupSeatClickListener(final TextView seat) {
@@ -102,6 +99,7 @@ public class SeatActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         Log.d("Firebase", "Data added successfully");
                         Toast.makeText(SeatActivity.this, "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(SeatActivity.this,MainActivity.class));
                     } else {
                         Log.e("Firebase", "Error adding data", task.getException());
                         Toast.makeText(SeatActivity.this, "Lỗi, không thể thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
