@@ -32,4 +32,13 @@
     <string name="fanta_orange_image">Hình ảnh Fanta Cam</string>
     <string name="sprite_image">Hình ảnh Sprite</string>
     <string name="zero">0</string>
+    <string name="contact_info_title">Thông tin liên hệ</string>
+    <string name="change_password_title">Đổi mật khẩu</string>
+    <string name="old_password_hint">Mật khẩu cũ</string>
+    <string name="new_password_hint">Mật khẩu mới</string>
+    <string name="confirm_new_password_hint">Xác nhận mật khẩu mới</string>
+    <string name="change_password_button">Đổi mật khẩu</string>
+    <string name="back_button_desc">Quay lại</string>
+    <string name="special_offers_title">Ưu đãi ngập tràn</string>
+    <string name="offer_image_desc">Hình ảnh ưu đãi</string>
 </resources>

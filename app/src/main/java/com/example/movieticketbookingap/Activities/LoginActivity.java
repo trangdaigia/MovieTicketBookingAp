@@ -1,6 +1,7 @@
 package com.example.movieticketbookingap.Activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -15,7 +16,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.movieticketbookingap.R;
@@ -29,7 +29,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
         initView();
     }
@@ -41,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         CreatAccount = findViewById(R.id.TaoTaiKhoan);
         forgetAcc = findViewById(R.id.forget);
         mAuth = FirebaseAuth.getInstance();
+
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,15 +56,16 @@ public class LoginActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         // Sign in success, update UI with the signed-in user's information
-                                        Toast.makeText(LoginActivity.this, "Đăng Nhập Thành Công.",
-                                                Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                                        Toast.makeText(LoginActivity.this, "Đăng Nhập Thành Công.", Toast.LENGTH_SHORT).show();
+                                        String uid = mAuth.getCurrentUser().getUid();
+
+                                        // Lưu email và UID vào SharedPreferences
+                                        saveUserDetails(email, uid);
+
+                                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                     } else {
                                         // If sign in fails, display a message to the user.
-
-                                        Toast.makeText(LoginActivity.this, "Đăng Nhập Thất Bại.",
-                                                Toast.LENGTH_SHORT).show();
-
+                                        Toast.makeText(LoginActivity.this, "Đăng Nhập Thất Bại.", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });
@@ -78,5 +79,13 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, SignupActivity.class));
             }
         });
+    }
 
-    }}
+    private void saveUserDetails(String email, String uid) {
+        SharedPreferences preferences = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("userEmail", email);
+        editor.putString("userUid", uid);
+        editor.apply();
+    }
+}
