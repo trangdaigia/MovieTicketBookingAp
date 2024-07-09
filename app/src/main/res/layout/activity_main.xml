@@ -243,30 +243,7 @@
               android:textColor="@color/white" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/popcorn"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.25"
-            android:orientation="vertical">
 
-          <ImageView
-              android:id="@+id/imagebtn2"
-              android:layout_width="24dp"
-              android:layout_height="24dp"
-              android:layout_gravity="center"
-              android:layout_margin="5dp"
-              app:tint="@color/white"
-              android:src="@drawable/popcorn" />
-
-          <TextView
-              android:id="@+id/textYeuThich"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="Bắp Nước"
-              android:textAlignment="center"
-              android:textColor="@color/white" />
-        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/giohang"
