@@ -40,7 +40,9 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.GioHangV
         holder.itemGioHangGia.setText(String.valueOf(gioHang.getTotalAmount()));
         holder.itemGioHangSoLuongBap.setText(String.valueOf(gioHang.getPopcornCount()));
         holder.itemGioHangSoLuongNuoc.setText(String.valueOf(gioHang.getDrinkCount()));
-
+        Glide.with(context)
+                .load(gioHang.getImage())
+                .into(holder.itemGioHangImage);
 
 
         // Set image (if you have an image to set)

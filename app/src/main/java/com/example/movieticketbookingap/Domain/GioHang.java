@@ -9,6 +9,7 @@ public class GioHang implements Serializable {
     private ArrayList<Seat> selectedSeats;
     private int popcornCount;
     private int drinkCount;
+    private String image;
 
     public GioHang() {
     }
@@ -19,6 +20,7 @@ public class GioHang implements Serializable {
         this.selectedSeats = selectedSeats;
         this.popcornCount = popcornCount;
         this.drinkCount = drinkCount;
+        this.image = image;
     }
 
     public String getMovieName() {
@@ -59,5 +61,13 @@ public class GioHang implements Serializable {
 
     public void setDrinkCount(int drinkCount) {
         this.drinkCount = drinkCount;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

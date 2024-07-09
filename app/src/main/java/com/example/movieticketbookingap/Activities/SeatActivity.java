@@ -131,6 +131,7 @@ public class SeatActivity extends AppCompatActivity {
         gioHang.put("movieName", movie.getName());
         gioHang.put("totalAmount", totalAmount);
         gioHang.put("selectedSeats", selectedSeats);
+        gioHang.put("image", movie.getImage());
         gioHang.put("popcornCount", popcornCount);
         gioHang.put("drinkCount", drinkCount);
 
