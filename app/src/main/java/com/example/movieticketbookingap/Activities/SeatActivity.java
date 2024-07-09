@@ -89,17 +89,15 @@ public class SeatActivity extends AppCompatActivity {
     }
 
     private void insertDataToFirebase() {
-        // Tạo một đối tượng DatabaseReference để trỏ đến vị trí trong Realtime Database
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("GioHang");
+        String userId = "USER_ID";  // Replace with actual user ID or session ID
 
-// Tạo một đối tượng để lưu trữ dữ liệu
         Map<String, Object> gioHang = new HashMap<>();
         gioHang.put("movieName", movie.getName());
         gioHang.put("totalAmount", totalAmount);
         gioHang.put("selectedSeats", selectedSeats);
 
-// Đẩy dữ liệu lên Firebase
-        databaseReference.push().setValue(gioHang)
+        databaseReference.child(userId).setValue(gioHang)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         Log.d("Firebase", "Data added successfully");
@@ -109,6 +107,6 @@ public class SeatActivity extends AppCompatActivity {
                         Toast.makeText(SeatActivity.this, "Lỗi, không thể thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
                     }
                 });
-
     }
+
 }

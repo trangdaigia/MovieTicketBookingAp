@@ -7,14 +7,19 @@ public class GioHang implements Serializable {
     private String movieName;
     private int totalAmount;
     private ArrayList<Seat> selectedSeats;
+    private String bapNuoc;
+    private int soLuong;
 
-    // Constructors, getters, and setters
-    public GioHang() {}
+    public GioHang() {
+        // Default constructor required for calls to DataSnapshot.getValue(GioHang.class)
+    }
 
-    public GioHang(String movieName, int totalAmount, ArrayList<Seat> selectedSeats) {
+    public GioHang(String movieName, int totalAmount, ArrayList<Seat> selectedSeats, String bapNuoc, int soLuong) {
         this.movieName = movieName;
         this.totalAmount = totalAmount;
         this.selectedSeats = selectedSeats;
+        this.bapNuoc = bapNuoc;
+        this.soLuong = soLuong;
     }
 
     public String getMovieName() {
@@ -39,5 +44,21 @@ public class GioHang implements Serializable {
 
     public void setSelectedSeats(ArrayList<Seat> selectedSeats) {
         this.selectedSeats = selectedSeats;
+    }
+
+    public String getBapNuoc() {
+        return bapNuoc;
+    }
+
+    public void setBapNuoc(String bapNuoc) {
+        this.bapNuoc = bapNuoc;
+    }
+
+    public int getSoLuong() {
+        return soLuong;
+    }
+
+    public void setSoLuong(int soLuong) {
+        this.soLuong = soLuong;
     }
 }

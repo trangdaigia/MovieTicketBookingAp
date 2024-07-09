@@ -5,6 +5,8 @@ import java.io.Serializable;
 public class Seat implements Serializable {
     private String seatNumber;
 
+    public Seat() {
+    }
     public Seat(String seatNumber) {
         this.seatNumber = seatNumber;
     }

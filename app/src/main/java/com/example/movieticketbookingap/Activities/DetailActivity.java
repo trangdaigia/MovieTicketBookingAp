@@ -56,7 +56,4 @@ public class DetailActivity extends BaseActivity {
     private void getIntentExtra() {
         movie = (Movie) getIntent().getSerializableExtra("movie");
     }
-
-
-
 }

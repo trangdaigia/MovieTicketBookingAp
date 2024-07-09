@@ -1,7 +1,6 @@
 package com.example.movieticketbookingap.Adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,20 +10,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.example.movieticketbookingap.Activities.DetailActivity;
 import com.example.movieticketbookingap.Domain.GioHang;
 import com.example.movieticketbookingap.Domain.Seat;
 import com.example.movieticketbookingap.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.GioHangViewHolder> {
     private Context context;
     private ArrayList<GioHang> gioHangList;
 
-    public GioHangAdapter(ArrayList<GioHang> gioHangList) {
+    public GioHangAdapter(Context context, ArrayList<GioHang> gioHangList) {
+        this.context = context;
         this.gioHangList = gioHangList;
     }
 
@@ -38,14 +35,14 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.GioHangV
     @Override
     public void onBindViewHolder(@NonNull GioHangViewHolder holder, int position) {
         GioHang gioHang = gioHangList.get(position);
-        holder.movieNameTxt.setText(gioHang.getMovieName());
-        holder.totalAmountTxt.setText(gioHang.getTotalAmount() + "đ");
+        holder.itemGioHangTenSP.setText(gioHang.getMovieName());
+        holder.itemGioHangGia.setText(String.valueOf(gioHang.getTotalAmount()));
+        holder.itemGioHangSoLuong.setText(String.valueOf(gioHang.getSelectedSeats().size()));
+        holder.itemGioHangBapNuoc.setText("Bắp nước: " + gioHang.getBapNuoc());
+        holder.itemGioHangSoLuong.setText("Số lượng: " + gioHang.getSoLuong());
 
-        StringBuilder seats = new StringBuilder();
-        for (Seat seat : gioHang.getSelectedSeats()) {
-            seats.append(seat.getSeatNumber()).append(" ");
-        }
-        holder.selectedSeatsTxt.setText(seats.toString().trim());
+        // Set image (if you have an image to set)
+        // holder.itemGioHangImage.setImageResource(...); // Set your image resource here
     }
 
     @Override
@@ -54,13 +51,16 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.GioHangV
     }
 
     public static class GioHangViewHolder extends RecyclerView.ViewHolder {
-        TextView movieNameTxt, totalAmountTxt, selectedSeatsTxt;
+        ImageView itemGioHangImage;
+        TextView itemGioHangTenSP, itemGioHangGia, itemGioHangSoLuong, itemGioHangBapNuoc;
 
         public GioHangViewHolder(@NonNull View itemView) {
             super(itemView);
-            movieNameTxt = itemView.findViewById(R.id.item_giohang_tensp);
-            totalAmountTxt = itemView.findViewById(R.id.txttongtien);
-            selectedSeatsTxt = itemView.findViewById(R.id.item_giohang_soluong);
+            itemGioHangImage = itemView.findViewById(R.id.item_giohang_image);
+            itemGioHangTenSP = itemView.findViewById(R.id.item_giohang_tensp);
+            itemGioHangGia = itemView.findViewById(R.id.item_giohang_gia);
+            itemGioHangSoLuong = itemView.findViewById(R.id.item_giohang_soluong2);
+            itemGioHangBapNuoc = itemView.findViewById(R.id.item_giohang_bapnuoc);
         }
     }
 }
